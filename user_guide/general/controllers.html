@@ -545,12 +545,12 @@ controller gets called.</strong></p>
 <p>If your URI contains more than two segments they will be passed to your
 method as parameters.</p>
 <p>For example, let&#8217;s say you have a URI like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">shoes</span><span class="o">/</span><span class="nx">sandals</span><span class="o">/</span><span class="mi">123</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">customer</span><span class="o">/</span><span class="nx">shoes</span><span class="o">/</span><span class="nx">sandals</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
 <p>Your method will be passed URI segments 3 and 4 (&#8220;sandals&#8221; and &#8220;123&#8221;):</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">class</span> <span class="nc">Products</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">customer</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">shoes</span><span class="p">(</span><span class="nv">$sandals</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
         <span class="p">{</span>
@@ -713,11 +713,11 @@ one and place your controller classes within them.</p>
 <p>When using this feature the first segment of your URI must
 specify the folder. For example, let&#8217;s say you have a controller located
 here:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">controllers</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">Shoes</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">controllers</span><span class="o">/</span><span class="nx">customer</span><span class="o">/</span><span class="nx">Shoes</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>To call the above controller your URI will look something like this:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">shoes</span><span class="o">/</span><span class="nx">show</span><span class="o">/</span><span class="mi">123</span>
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">customer</span><span class="o">/</span><span class="nx">shoes</span><span class="o">/</span><span class="nx">show</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
 </div>

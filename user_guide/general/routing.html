@@ -525,10 +525,10 @@ rules. Any valid regular expression is allowed, as are back-references.</p>
 rather than the double backslash syntax.</p>
 </div>
 <p>A typical RegEx route might look something like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;$1/id_$2&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;customer/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;$1/id_$2&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In the above example, a URI similar to products/shirts/123 would instead
+<p>In the above example, a URI similar to customer/shirts/123 would instead
 call the &#8220;shirts&#8221; controller class and the &#8220;id_123&#8221; method.</p>
 <p>With regular expressions, you can also catch multiple segments at once.
 For example, if a user accesses a password protected area of your web
@@ -555,7 +555,7 @@ might be a good starting point.</p>
 <h2>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this headline">¶</a></h2>
 <p>You can also use callbacks in place of the normal routing rules to process
 the back-references. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-zA-Z]+)/edit/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$product_type</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;customer/([a-zA-Z]+)/edit/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$product_type</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="k">return</span> <span class="s1">&#39;catalog/product_edit/&#39;</span> <span class="o">.</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$product_type</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">};</span>
@@ -569,15 +569,15 @@ This is particularly useful when building RESTful applications. You can use stan
 verbs (GET, PUT, POST, DELETE, PATCH) or a custom one such (e.g. PURGE). HTTP verb rules
 are case-insensitive. All you need to do is to add the verb as an array key to your route.
 Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">][</span><span class="s1">&#39;put&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/insert&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;customer&#39;</span><span class="p">][</span><span class="s1">&#39;put&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/insert&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In the above example, a PUT request to URI &#8220;products&#8221; would call the <code class="docutils literal"><span class="pre">Product::insert()</span></code>
+<p>In the above example, a PUT request to URI &#8220;customer&#8221; would call the <code class="docutils literal"><span class="pre">Product::insert()</span></code>
 controller method.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/(:num)&#39;</span><span class="p">][</span><span class="s1">&#39;DELETE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/delete/$1&#39;</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;customer/(:num)&#39;</span><span class="p">][</span><span class="s1">&#39;DELETE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/delete/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A DELETE request to URL with &#8220;products&#8221; as first the segment and a number in the second will be
+<p>A DELETE request to URL with &#8220;customer&#8221; as first the segment and a number in the second will be
 mapped to the <code class="docutils literal"><span class="pre">Product::delete()</span></code> method, passing the numeric value as the first parameter.</p>
 <p>Using HTTP verbs is of course, optional.</p>
 </div>
